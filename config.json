@@ -1,0 +1,25 @@
+{
+    "ignored": {
+      "*": {
+        "*": {
+          "*": {
+            "iterable": false,
+            "enables": [
+              "query",
+              "formData"
+            ],
+            "rules": {
+              "query": {
+                "parameters": [
+                  "ts"
+                ]
+              },
+              "formData": {
+                "parameters": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
