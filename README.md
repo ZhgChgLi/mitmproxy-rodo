@@ -10,6 +10,8 @@ By leveraging Mitmproxy and its extension capabilities, Rodo provides a seamless
 You can customize it as needed or contribute by submitting issues or pull requests.
 Thank you for your contribution and for using this project.
 
+- ref article: [[Technical Detail][ZH-Hant] App End-to-End Testing Local Snapshot API Mock Server](https://medium.com/zrealm-ios-dev/poc-app-end-to-end-testing-local-snapshot-api-mock-server-5a5c4b25a83d)
+
 ## How It Works
 Rodo is built upon the extension of Mitmproxy, utilizing a Man-in-the-Middle proxy server as an API mock server. It extends the functionality by introducing the recording and storage of responses.
 
@@ -150,3 +152,37 @@ Note: The provided JSON represents the configuration structure for the config.js
   }
 }
 ```
+
+## ToDo
+- [ ] Create an iOS End-to-End Testing using the Github API and this tool as a local Mock Server.
+
+## Inspiration
+- [mitmproxy-mock](https://github.com/woltapp/mitmproxy-mock)
+
+## Why is it called Rodo?
+<img width="486" alt="image" src="https://github.com/ZhgChgLi/mitmproxy-rodo/assets/33706588/356a788d-8dc4-47f9-9dc7-b5dd678c1fdf">
+
+It's from the Japanese anime "Jujutsu Kaisen" - a quote from the character Kento Nanami.
+- 労働はクソということです (**Rōdō** wa kuso to iu kotodesu)
+
+## Author
+- [ZhgChg.Li](https://zhgchg.li/)
+- [ZhgChgLi's Medium](https://blog.zhgchg.li/)
+
+## Other works
+### Swift Libraries
+- [ZMarkupParser](https://github.com/ZhgChgLi/ZMarkupParser) is a pure-Swift library that helps you to convert HTML strings to NSAttributedString with customized style and tags.
+- [ZPlayerCacher](https://github.com/ZhgChgLi/ZPlayerCacher) is a lightweight implementation of the AVAssetResourceLoaderDelegate protocol that enables AVPlayerItem to support caching streaming files.
+- [ZNSTextAttachment](https://github.com/ZhgChgLi/ZNSTextAttachment) enables NSTextAttachment to download images from remote URLs, support both UITextView and UILabel.
+
+### Integration Tools
+- [ZReviewTender](https://github.com/ZhgChgLi/ZReviewTender) is a tool for fetching app reviews from the App Store and Google Play Console and integrating them into your workflow.
+- [ZMediumToMarkdown](https://github.com/ZhgChgLi/ZMediumToMarkdown) is a powerful tool that allows you to effortlessly download and convert your Medium posts to Markdown format.
+
+# Donate
+
+[![Buy Me A Coffe](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20beer!&emoji=%F0%9F%8D%BA&slug=zhgchgli&button_colour=FFDD00&font_colour=000000&font_family=Bree&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/zhgchgli)
+
+If you find this library helpful, please consider starring the repo or recommending it to your friends.
+
+Feel free to open an issue or submit a fix/contribution via pull request. :)
