@@ -17,7 +17,7 @@ In recording mode, the script captures the actual network request results and or
 
 In playback mode, the script compares the incoming requests with the stored data. If a match (same path and same hash) is found, the corresponding local data is retrieved. If a request has been made multiple times, the script retrieves the stored data in the order they were recorded. At this point, no real network requests are made.
 
-### The directory structure should be as follows:
+##### The save data directory structure should be as follows:
 - Host
 - ++ Path composed with `-` (e.g., get/user will be get-user)
 - +++ HTTP Method
@@ -29,7 +29,9 @@ In playback mode, the script compares the incoming requests with the stored data
 Please make sure you have installed the [Mitmproxy](https://mitmproxy.org) tool and have installed and enabled the corresponding root certificate on your computer, mobile device, or emulator.
 
 ```
+brew install mitmproxy
 ```
+and [about certificates](https://docs.mitmproxy.org/stable/concepts-certificates/).
 
 ## Usage
 ### Regular Proxy Mode
