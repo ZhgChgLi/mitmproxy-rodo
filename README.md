@@ -1,4 +1,4 @@
-# Rodo - An auto API Record and Replay MITMProxy Script: Your Painless Client-Side Solution for End-to-End Testing
+# Rodo - An auto API Record and Replay MITMProxy Script
 
 **Rodo is a Python script that extends [Mitmproxy](https://mitmproxy.org) and provides a fast and easy solution for mocking an API server during client-side end-to-end testing. It eliminates the need to modify the API architecture or configure a mock server on the server-side.**
 
