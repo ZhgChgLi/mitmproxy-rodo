@@ -19,6 +19,9 @@ In recording mode, the script captures the actual network request results and or
 
 In playback mode, the script compares the incoming requests with the stored data. If a match (same path and same hash) is found, the corresponding local data is retrieved. If a request has been made multiple times, the script retrieves the stored data in the order they were recorded. At this point, no real network requests are made.
 
+![image](https://github.com/ZhgChgLi/mitmproxy-rodo/assets/33706588/ae5841c5-b0d3-49ac-9ddd-c918d5484d78)
+
+
 ##### The save data directory structure should be as follows:
 - Host
 - ++ Path composed with `-` (e.g., get/user will be get-user)
