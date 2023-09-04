@@ -44,6 +44,7 @@ and [about certificates](https://docs.mitmproxy.org/stable/concepts-certificates
 ### Regular Proxy Mode
 - iOS: Set the proxy on your computer or mobile device.
 - Android: Set the proxy on your emulator or mobile device.
+- suggest adding `"~d xxx.com"` at the end of the command to filter only the API Host Domain.
 
 #### Record
 ```
@@ -59,11 +60,11 @@ mitmdump -s rodo.py --set dumper_folder=myTestCase
 
 #### Record
 ```
-mitmdump -m reverse:https://api.pinkoi.com -s rodo.py --set dumper_folder=myTestCase --set record=true 
+mitmdump -m reverse:https://api.zhgchg.li -s rodo.py --set dumper_folder=myTestCase --set record=true 
 ```
 #### Playback
 ```
-mitmdump -m reverse:https://api.pinkoi.com -s rodo.py --set dumper_folder=myTestCase
+mitmdump -m reverse:https://api.zhgchg.li -s rodo.py --set dumper_folder=myTestCase
 ```
 
 ## Parameter List
@@ -72,7 +73,7 @@ mitmdump -m reverse:https://api.pinkoi.com -s rodo.py --set dumper_folder=myTest
 - `-—set network_restricted=true`: Default is true. Determines how to handle missing local saved data. Set to true to return 404, or false to make real requests to fetch data.
 - `-—set config_file=config.json`: Path to the config.json configuration file. (The configuration information for config.json is provided below.)
 - `-—set auto_extend_cookie_expire_days=7`: Default is 7. Specifies the number of days to automatically extend all cookie expires if the max-age is not set. Set to 0 to disable auto extension.
-- `"~d zhgchg.li"`: You can add this parameter at **the end of the command** in Regular Proxy mode to filter only the required API Domain Host. ([Filter Expressions](https://docs.mitmproxy.org/stable/concepts-filters/) )
+- `"~d api.zhgchg.li"`: You can add this parameter at **the end of the command** in Regular Proxy mode to filter only the required API Domain Host. ([Filter Expressions](https://docs.mitmproxy.org/stable/concepts-filters/) )
 
 ### config.json
 ```json
