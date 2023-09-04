@@ -52,7 +52,7 @@ class RodoHandler:
             name="auto_extend_cookie_expire_days",
             typespec=int,
             default=7,
-            help="The days you want to auto extend all cookie expires if not set max-age, set 0 to disable auto extend.",
+            help="Specifies the number of days to automatically extend all cookie expires if the max-age is not set. Set to 0 to disable auto ",
         )
 
         loader.add_option(
@@ -162,7 +162,7 @@ class RodoHandler:
         hash = self.hash(request)
         requestPath = "-".join(request.path_components)
 
-        folder = Path(ctx.options.dumper_folder) / host / method / requestPath / hash
+        folder = Path(ctx.options.dumper_folder) / host / requestPath / method / hash
 
         if not folder.exists():
             return None
@@ -206,7 +206,7 @@ class RodoHandler:
 
         iterable = self.configuration.get("ignored", {}).get("paths", {}).get(request.host, {}).get(requestPath, {}).get(request.method, {}).get("iterable", False)
         
-        folder = Path(ctx.options.dumper_folder) / host / method / requestPath / hash
+        folder = Path(ctx.options.dumper_folder) / host / requestPath / method / hash
 
         # create dir if not exists
         if not folder.exists():
