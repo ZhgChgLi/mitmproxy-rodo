@@ -150,6 +150,7 @@ class RodoHandler:
         hashData = {"query":sorted(filteredQuery), "form": sorted(filteredFormData)}
         json_str = json.dumps(hashData, sort_keys=True)
 
+
         # Apply SHA-256 hash function
         hash_object = hashlib.sha256(json_str.encode())
         hash_string = hash_object.hexdigest()
@@ -167,17 +168,13 @@ class RodoHandler:
         if not folder.exists():
             return None
 
-        content_type = request.headers.get("content-type", "").split(";")[0]
-        ext = mimetypes.guess_extension(content_type) or ".json"
-
-
         count = self.readHistory.get(host, {}).get(method, {}).get(requestPath, {}).get(hash, 0)
 
-        filepath = folder / f"Content-{str(count)}{ext}"
+        headerFilePath = folder / f"Header-{str(count)}.json"            
 
-        while not filepath.exists() and count > 0:
+        while not headerFilePath.exists() and count > 0:
             count = count - 1
-            filepath = folder / f"Content-{str(count)}{ext}"
+            headerFilePath = folder / f"Header-{str(count)}.json"
 
         if self.readHistory.get(host) is None:
             self.readHistory[host] = {}
@@ -186,10 +183,20 @@ class RodoHandler:
         if self.readHistory.get(host).get(method).get(requestPath) is None:
             self.readHistory[host][method][requestPath] = {}
 
-        if filepath.exists():
-            headerFilePath = folder / f"Header-{str(count)}.json"
-            if not headerFilePath.exists():
-                headerFilePath = None
+        if headerFilePath.exists():
+            content_type = "application/json"
+            with open(headerFilePath, "rb") as f:
+                objs = pickle.load(f)
+                for key in objs:
+                    for value in objs[key]:
+                        if key.lower() == b"content-type":
+                            content_type = value.decode('utf-8').split(";")[0]
+            
+            ext = mimetypes.guess_extension(content_type) or ".json"
+
+            filepath = folder / f"Content-{str(count)}{ext}"
+            if not filepath.exists():
+                filepath = None
             count += 1
             self.readHistory[host][method][requestPath][hash] = count
 
